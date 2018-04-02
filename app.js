@@ -30,8 +30,3 @@ function onSubmitReqSuccess(responseData){
   console.log(responseData);
   // process data
 }
-
-$.get("https://kickflip-api.herokuapp.com/tricks", (response) => {
-  processResponse(response);
-});
-console.log(array[3]);
