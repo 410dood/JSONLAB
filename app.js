@@ -25,8 +25,3 @@ $('form').on('submit', function(event){
     success: onSubmitReqSuccess
   });
 });
-
-function onSubmitReqSuccess(responseData){
-  console.log(responseData);
-  // process data
-}
