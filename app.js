@@ -1,26 +1,37 @@
-// $.ajax({
-//   // What kind of request
-//   method: 'GET',
+var endpoint = 'https://api.spotify.com/v1/search?q=goodbye&type=artist'
 
-//   // The URL for the request
-//   url: 'https://kickflip-api.herokuapp.com/tricks',
+// click event on button
+$('button').on('click', function(event) {
+  $.get(endpoint, (data) => {
+    onClickReqSuccess(data)
+  })
+});
 
-//   // The type of data we want back
-//   dataType: 'json',
+function onClickReqSuccess(data){
+  console.log(responseData);
+  // process data
+}
 
-//   // Code to run if the request succeeds; the JSON
-//   // response is passed to the function as an argument.
-//   success: onSuccess
-// });
 
-// // defining the callback function that will happen
-// // if the request succeeds.
-// function onSuccess(responseData) {
-//     console.log(responseData[3]);
-//     // celebrate!
-// };
+
+// submit event on form
+$('form').on('submit', function(event){
+  event.preventDefault();
+  $.ajax({
+    method: 'GET',
+    url: endpoint,
+    data: 'q=cats',
+    dataType: 'json',
+    success: onSubmitReqSuccess
+  });
+});
+
+function onSubmitReqSuccess(responseData){
+  console.log(responseData);
+  // process data
+}
 
 $.get("https://kickflip-api.herokuapp.com/tricks", (response) => {
   processResponse(response);
 });
-console.log(response[3])
+console.log(array[3]);
