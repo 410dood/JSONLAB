@@ -21,5 +21,6 @@
 // };
 
 $.get("https://kickflip-api.herokuapp.com/tricks", (response) => {
-  processResponse(response[3]);
+  processResponse(response);
 });
+console.log(response[3])
